@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="site-header">
+
+    <div class="top">
+
+        <h1 class="logo">Etsy</h1>
+
+        <div class="categories">
+            <span class="menu-icon">☰</span>
+            <span>Categories</span>
+        </div>
+
+        <div class="search-bar">
+            <input
+                type="text"
+                placeholder="Search for anything"
+            >
+
+            <button type="button" aria-label="Search">
+                🔍
+            </button>
+        </div>
+
+        <div class="user-actions">
+            <button type="button">Sign in</button>
+
+            <a href="#favorites"
+               aria-label="Favorites"
+               class="icon-link">♥</a>
+
+            <a href="#cart"
+               aria-label="Shopping bag"
+               class="icon-link">🧺</a>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#ART_COLLECTION">ART COLLECTION</a>
+        <a href="#JEWELARY">JEWELARY</a>
+        <a href="#BOOKS">BOOKS</a>
+    </nav>
+
+</header>
+
+  
+<main>
+    <div class="prod">
+
+        
+        <div class="pro1">
+
+            <img src="img/art3.webp" alt="Personalized family tree magnet">
+
+           
+            <section class="reviews">
+
+                <h2>Reviews for this item</h2>
+
+                <p class="review-summary">
+                    What buyers say, summarised by AI:
+                    <span>✓ Love it</span>
+                    <span>✓ Perfect gift</span>
+                    <span>✓ Looks great</span>
+                    <span>✓ As described</span>
+                    <span>✓ Great quality</span>
+                </p>
+
+                <div class="rating-overview">
+                    <div class="overall-rating">
+                        <strong>4.8</strong>
+                        <span class="big-star">★</span>
+                        <small>Item average<br>(44 reviews)</small>
+                    </div>
+
+                    <div class="rating-score">
+                        <strong>4.9</strong>
+                        <span>Item quality</span>
+                    </div>
+
+                    <div class="rating-score">
+                        <strong>4.9</strong>
+                        <span>Delivery</span>
+                    </div>
+
+                    <div class="rating-score">
+                        <strong>5.0</strong>
+                        <span>Customer service</span>
+                    </div>
+                </div>
+
+                <div class="review-list">
+
+                    <article class="review">
+                        <div class="review-heading">
+                            <span class="stars">★★★★★</span>
+                            <strong>5</strong>
+                            <span class="this-item">This item</span>
+                            <span class="reviewer">Lauren · 20 Oct, 2026</span>
+                        </div>
+
+                        <p>
+                            Bridesmaids gifts - items were packaged
+                            nicely and as described!
+                        </p>
+                    </article>
+
+                    <article class="review">
+                        <div class="review-heading">
+                            <span class="stars">★★★★★</span>
+                            <strong>5</strong>
+                            <span class="this-item">This item</span>
+                            <span class="reviewer">Rachael · 04 Oct, 2026</span>
+                        </div>
+
+                        <p>
+                            Love, exactly like the photos and my
+                            friends loved their gift.
+                        </p>
+                    </article>
+
+                    <article class="review">
+                        <div class="review-heading">
+                            <span class="stars">★★★★★</span>
+                            <strong>5</strong>
+                            <span class="this-item">This item</span>
+                            <span class="reviewer">TJ · 04 Oct, 2026</span>
+                        </div>
+
+                        <p>
+                            Fantastic product. Meet my expectations
+                            and my friends loved them!
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+
+        
+        <div class="pro2">
+
+            <h2>Now Price: USD 19.72</h2>
+            <h3>Sale for limited time</h3>
+
+            <p class="product-description">
+                Personalized Family Tree Tomato Fridge Magnet Gift Idea
+                For Housewarming Party Cute Farmcore Theme Customized
+                Kitchen Accent Decor Gift
+            </p>
+
+            <div class="pro3">
+                <h5>By Foxberry Handmade</h5>
+                <h6>FoxberryHandmade Toronto, Canada</h6>
+
+                <div class="order-form">
+
+                    <label for="color">Please Select Color:</label>
+                    <select id="color" name="color" required>
+                        <option value="" selected disabled>
+                            Select an option
+                        </option>
+                        <option value="pink">Pink</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                        <option value="blue">Blue</option>
+                    </select>
+
+                    <label for="charm">
+                        Please select your add-on charm:
+                    </label>
+                    <select id="charm" name="charm" required>
+                        <option value="" selected disabled>
+                            Select an option
+                        </option>
+                        <option value="heart">Heart</option>
+                        <option value="star">Star</option>
+                        <option value="flower">Flower</option>
+                        <option value="butterfly">Butterfly</option>
+                    </select>
+
+                    <details class="person">
+                        <summary>＋ Add personalisation</summary>
+
+                        <label for="personal-text">Enter your text:</label>
+                        <input
+                            type="text"
+                            id="personal-text"
+                            name="personal-text"
+                            placeholder="Enter your name or message"
+                        >
+                    </details>
+
+                    <label for="quantity">Quantity</label>
+                    <select id="quantity" name="quantity">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <button type="button" class="basket-button">
+                        Add to cart
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Item details beneath Add to cart -->
+            <section class="product-info-panels">
+
+                <details open>
+                    <summary>Item details</summary>
+
+                    <h3>Highlights</h3>
+
+                    <p class="highlight">
+                        ✋ Made by <strong>Foxberry Handmade</strong>
+                    </p>
+
+                    <p class="panel-description">
+                        A personalised family tree magnet, perfect
+                        for housewarming parties and thoughtful gifts.
+                    </p>
+
+                    <a href="#item-details" class="learn-more">
+                        Learn more about this item
+                    </a>
+                </details>
+
+                <details open>
+                    <summary>Delivery and return policies</summary>
+
+                    <div class="policy-item">
+                        <span>▦</span>
+                        <p>Order today to get by <strong>04–16 Nov</strong></p>
+                    </div>
+
+                    <div class="policy-item">
+                        <span>↩</span>
+                        <p>
+                            <u>Returns & exchanges</u> accepted within 14 days
+                        </p>
+                    </div>
+
+                    <div class="policy-item">
+                        <span>▣</span>
+                        <p>Postage: <strong>USD 6.90</strong></p>
+                    </div>
+                </details>
+
+            </section>
+
+        </div>
+    </div>
+</main>
+
+     <footer>
+      <h>We are on a mission <br> to keep commerce human.</h>
+      <div class="container">
+        
+        <div class="box">
+          <h3>SHOP </h3>
+          <ul>
+            <li>Gift Cards</li>
+            <li>Etsy blogs</li>
+            <li>Etsy United Kingdom</li>
+            <li>Etsy Germany</li>
+            <li> Etsy Canada</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3> SELL</h3>
+          <ul>
+            <li>Sell on Etsy</li>
+            
+            <li>Teams</li>
+            <li>Forums </li>
+            <li>Affiliates</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>ABOUT </h3>
+          <ul>
+            <li>Etsy</li>
+            <li>Polices</li>
+            <li>Investor</li>
+            <li>Careers</li>
+            <li>Impact</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3> HELP</h3>
+          <ul>
+            <li>Help Center</li>
+            <li>Settings</li>
+            
+          </ul>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
