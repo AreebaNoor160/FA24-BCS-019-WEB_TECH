@@ -1041,3 +1041,83 @@ footer .box li:hover{
         overflow-wrap: break-word;
     }
 }
+
+/* CATEGORY FILTER */
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 50px;
+}
+
+/* Hide original radio circles */
+.category-filter input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Filter buttons */
+.category-filter label {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: white;
+    font-size: 15px;
+}
+
+/* Selected filter */
+.category-filter input:checked + label {
+    background-color: hsl(133, 70%, 45%);
+    color: white;
+    border-color: hsl(133, 70%, 45%);
+}
+
+/* Keyboard focus */
+.category-filter input:focus-visible + label {
+    outline: 2px solid black;
+    outline-offset: 3px;
+}
+/* Hide radio buttons */
+.content > input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Filter buttons */
+.content > label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px 5px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Selected button */
+.content > input:checked + label {
+    background-color: hsl(133, 70%, 45%);
+    color: white;
+}
+
+/* Personalized Art */
+#filter-art:checked ~ .sections .gallery:not(.cat-art) {
+    display: none;
+}
+
+/* Pet Gifts */
+#filter-pet:checked ~ .sections .gallery:not(.cat-pet) {
+    display: none;
+}
+
+/* Jewelry */
+#filter-jewelry:checked ~ .sections .gallery:not(.cat-jewelry) {
+    display: none;
+}
+
+/* Books */
+#filter-books:checked ~ .sections .gallery:not(.cat-books) {
+    display: none;
+}
