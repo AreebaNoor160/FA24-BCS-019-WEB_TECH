@@ -364,6 +364,7 @@ body {
     display:flex;
     gap :20px;
     padding-left:50px;
+     flex-wrap: wrap;
     
    
    
@@ -375,6 +376,7 @@ body {
     padding:0px;
    
 }
+
 .gallery{
     margin-top: 20px;
     margin-bottom: 39px;
@@ -1095,7 +1097,7 @@ footer .box li:hover{
     flex-wrap: wrap;
     align-items: center;
     gap: 12px;
-    padding: 20px 50px;
+    padding: 20px 100px;
 }
 
 /* Hide original radio circles */
@@ -1116,9 +1118,9 @@ footer .box li:hover{
 
 /* Selected filter */
 .category-filter input:checked + label {
-    background-color: hsl(133, 70%, 45%);
+    background-color: #e87942;
     color: white;
-    border-color: hsl(133, 70%, 45%);
+    border-color: #F1641E;
 }
 
 /* Keyboard focus */
@@ -1144,7 +1146,7 @@ footer .box li:hover{
 
 /* Selected button */
 .content > input:checked + label {
-    background-color: hsl(133, 70%, 45%);
+    background-color: #F1641E;
     color: white;
 }
 
@@ -1166,4 +1168,40 @@ footer .box li:hover{
 /* Books */
 #filter-books:checked ~ .sections .gallery:not(.cat-books) {
     display: none;
+}
+/* Search and Sort Controls */
+.search-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 50px;
+}
+
+/* Search Input */
+#searchInput {
+    width: 300px;
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Sort Button */
+#sortBtn {
+    height: 45px;
+    padding: 0 22px;
+    background-color:#F1641E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sortBtn:hover {
+    background-color: #e3804f;
 }
