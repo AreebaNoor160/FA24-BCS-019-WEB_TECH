@@ -1166,3 +1166,86 @@ footer .box li:hover{
     }
 
 }
+
+/* =========================
+   CHECKOUT FORM
+========================= */
+
+.checkout-form {
+    max-width: 700px;
+
+    margin: 40px auto;
+    padding: 30px;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    background-color: white;
+}
+
+.checkout-form h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.checkout-field {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.checkout-field label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.checkout-field input,
+.checkout-field textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.checkout-field input:focus,
+.checkout-field textarea:focus {
+    outline: 2px solid #F1641E;
+    border-color: #F1641E;
+}
+
+.form-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.place-order-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 30px;
+
+    background-color: #302936;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.place-order-btn:hover {
+    background-color: #514657;
+}
+
+#checkoutMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}

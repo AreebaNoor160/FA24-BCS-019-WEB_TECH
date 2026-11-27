@@ -75,51 +75,139 @@ function addToCart(product, quantity) {
     saveCart();
 
     alert(product.name + " added to cart!");
-
 }
 
+let productsData = [];
 
-// Update count when page loads
+const artProducts = document.getElementById("artProducts");
+const jewelryProducts = document.getElementById("jewelryProducts");
+const bookProducts = document.getElementById("bookProducts");
+
+
+// Load products from JSON
+if (artProducts) {
+
+    fetch("products.json")
+
+        .then(function(response) {
+
+            if (!response.ok) {
+                throw new Error("Products file not found");
+            }
+
+            return response.json();
+
+        })
+
+        .then(function(products) {
+
+            productsData = products;
+
+            products.forEach(function(product) {
+
+                // Create product card
+                const card = document.createElement("div");
+
+                card.classList.add("gallery");
+                card.classList.add("cat-" + product.category);
+
+
+                // Product HTML
+                card.innerHTML = `
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                    <div class="para">
+
+                        <h6>${product.name}</h6>
+
+                        <h4>USD ${product.price}</h4>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="add-cart-btn"
+                        data-id="${product.id}">
+                        Add to Cart
+                    </button>
+                `;
+
+
+                // Select category container
+                let categoryContainer;
+
+                if (product.category === "art") {
+                    categoryContainer = artProducts;
+                }
+
+                else if (product.category === "jewelry") {
+                    categoryContainer = jewelryProducts;
+                }
+
+                else if (product.category === "books") {
+                    categoryContainer = bookProducts;
+                }
+
+
+                // Add product to its category
+                if (categoryContainer) {
+                    categoryContainer.appendChild(card);
+                }
+
+            });
+            searchProducts();
+        })
+
+        .catch(function(error) {
+
+            console.error("Error loading products:", error);
+
+        });}
+
+
+
+
+
 updateCartCount();
 
 const productCards = document.querySelectorAll(".gallery");
 
-productCards.forEach(function(card, index) {
+if (artProducts) {
 
-    const productName = card.querySelector("h6").textContent.trim();
+    artProducts.parentElement.parentElement
+        .addEventListener("click", function(event) {
 
-    const priceText = card.querySelector("h4").textContent;
+            const button = event.target.closest(".add-cart-btn");
 
-    const productPrice = Number(
-        priceText.replace("USD", "").trim()
-    );
+            if (!button) {
+                return;
+            }
 
-    const productImage = card.querySelector("img").getAttribute("src");
+            const productId = button.dataset.id;
 
-    const button = document.createElement("button");
+            // Find selected product from JSON data
+            const product = productsData.find(function(item) {
+                return String(item.id) === productId;
+            });
 
-    button.type = "button";
-    button.textContent = "Add to Cart";
-    button.className = "add-cart-btn";
+            if (product) {
 
+                addToCart({
+                    id: String(product.id),
+                    name: product.name,
+                    price: product.price,
+                    image: product.image
+                }, 1);
 
-    // Add click event
-    button.addEventListener("click", function() {
+            }
 
-        const product = {
-            id: "product-" + index,
-            name: productName,
-            price: productPrice,
-            image: productImage
-        };
+        });
 
-        addToCart(product, 1);
+}
 
-    });
-
-    card.appendChild(button);
-
-});
 const basketButton = document.querySelector(".basket-button");
 
 if (basketButton) {
@@ -367,5 +455,155 @@ function renderCart() {
 
     });
     renderCart();
+
+    // Checkout button
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    const checkoutForm = document.getElementById("checkoutForm");
+
+
+    // Open checkout form
+    if (checkoutBtn && checkoutForm) {
+
+        checkoutBtn.addEventListener("click", function() {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty!");
+
+                return;
+
+            }
+
+            checkoutForm.hidden = false;
+
+            checkoutForm.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+    // Checkout form validation
+    if (checkoutForm) {
+
+        checkoutForm.addEventListener("submit", function(event) {
+
+            // Prevent form submission initially
+            event.preventDefault();
+
+
+            // Get input values
+            const name = document.getElementById("customerName")
+                .value.trim();
+
+            const email = document.getElementById("customerEmail")
+                .value.trim();
+
+            const phone = document.getElementById("customerPhone")
+                .value.trim();
+
+            const address = document.getElementById("customerAddress")
+                .value.trim();
+
+
+            // Get error elements
+            const nameError = document.getElementById("nameError");
+
+            const emailError = document.getElementById("emailError");
+
+            const phoneError = document.getElementById("phoneError");
+
+            const addressError = document.getElementById("addressError");
+
+            const checkoutMessage = document.getElementById("checkoutMessage");
+
+
+            // Clear previous errors
+            nameError.textContent = "";
+
+            emailError.textContent = "";
+
+            phoneError.textContent = "";
+
+            addressError.textContent = "";
+
+            checkoutMessage.textContent = "";
+
+
+            // Regular expressions
+            const nameRegex = /^[A-Za-z][A-Za-z\s'-]{1,49}$/;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+            const phoneRegex = /^\+?[0-9]{10,15}$/;
+
+
+            let isValid = true;
+
+
+            // Validate name
+            if (!nameRegex.test(name)) {
+
+                nameError.textContent =
+                    "Please enter a valid name.";
+
+                isValid = false;
+
+            }
+
+
+            // Validate email
+            if (!emailRegex.test(email)) {
+
+                emailError.textContent =
+                    "Please enter a valid email address.";
+
+                isValid = false;
+
+            }
+
+
+            // Validate phone
+            if (!phoneRegex.test(phone)) {
+
+                phoneError.textContent =
+                    "Enter a valid phone number with 10 to 15 digits.";
+
+                isValid = false;
+
+            }
+
+
+            // Validate address
+            if (address === "") {
+
+                addressError.textContent =
+                    "Please enter your delivery address.";
+
+                isValid = false;
+
+            }
+
+
+            // Stop if validation fails
+            if (!isValid) {
+
+                return;
+
+            }
+
+
+            // Show success message
+            checkoutMessage.textContent =
+                "Your checkout details are valid!";
+
+            checkoutMessage.style.color = "green";
+
+        });
+
+    }
+
 
 }

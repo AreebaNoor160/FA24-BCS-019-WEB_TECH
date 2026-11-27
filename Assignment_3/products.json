@@ -1,0 +1,66 @@
+
+[
+  {
+    "id": 1,
+    "name": "Personalized Family Tree",
+    "category": "art",
+    "price": 86,
+    "image": "images/art1.webp"
+  },
+  {
+    "id": 2,
+    "name": "Custom Pet Keychain",
+    "category": "art",
+    "price": 220,
+    "image": "images/art2.webp"
+  },
+  {
+    "id": 3,
+    "name": "Custom Mini Pet",
+    "category": "art",
+    "price": 48,
+    "image": "images/art3.webp"
+  },
+  {
+    "id": 4,
+    "name": "Resin Earrings",
+    "category": "jewelry",
+    "price": 60,
+    "image": "images/j1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Custom Name Necklace",
+    "category": "jewelry",
+    "price": 90,
+    "image": "images/j2.avif"
+  },
+  {
+    "id": 6,
+    "name": "Charm Bracelet",
+    "category": "jewelry",
+    "price": 200,
+    "image": "images/j3.avif"
+  },
+  {
+    "id": 7,
+    "name": "Kids Coloring Book",
+    "category": "books",
+    "price": 29,
+    "image": "images/b1.webp"
+  },
+  {
+    "id": 8,
+    "name": "3D Ghost Printed Book",
+    "category": "books",
+    "price": 268,
+    "image": "images/b2.webp"
+  },
+  {
+    "id": 9,
+    "name": "Handmade Journal",
+    "category": "books",
+    "price": 78,
+    "image": "images/b3.webp"
+  }
+]
