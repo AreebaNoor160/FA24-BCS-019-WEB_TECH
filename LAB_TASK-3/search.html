@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSpace - Live Search</title>
+
+   
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #F5EDE4;
+    color: #49372E;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+    header {
+        padding: 20px 5%;
+        background-color: #E5D2BF;
+        border-bottom: 1px solid #D5BDA8;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #49372E;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+   main {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D2BF;
+    border-radius: 5px;
+
+    width: 100%;
+}
+
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #searchInput {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #D5BDA8;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    #productList {
+        list-style: none;
+    }
+
+    #productList li {
+        padding: 12px;
+        margin-bottom: 8px;
+        background-color: #F5EDE4;
+        border: 1px solid #E5D2BF;
+        border-radius: 5px;
+    }
+
+    #noResults {
+        color: red;
+        text-align: center;
+        display: none;
+    }
+
+    footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #E5D2BF;
+    border-top: 1px solid #D5BDA8;
+
+    margin-top: auto;
+}
+</style>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="../index.html">ShopSpace</a>
+    </header>
+
+    <main>
+        <h1>Search Products</h1>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <ul id="productList">
+            <li>Wooden Study Lamp</li>
+            <li>Everyday Ceramic Mug</li>
+            <li>Indoor Green Plant</li>
+            <li>Studio Headphones</li>
+            <li>Smart Watch</li>
+            <li>Travel Backpack</li>
+            <li>Water Bottle</li>
+            <li>Desk Organizer</li>
+            <li>Wireless Mouse</li>
+            <li>Notebook</li>
+        </ul>
+
+        <p id="noResults">No products found.</p>
+    </main>
+
+    <footer>
+        <p>ShopSpace - JavaScript Practice</p>
+    </footer>
+
+    <script src="search.js"></script>
+
+</body>
+</html>

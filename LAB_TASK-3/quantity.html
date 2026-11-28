@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSpace - Quantity Stepper</title>
+
+    
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F5EDE4;
+        color: #49372E;
+
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        padding: 20px 5%;
+        background-color: #E5D2BF;
+        border-bottom: 1px solid #D5BDA8;
+    }
+
+    header a {
+        text-decoration: none;
+        color: #49372E;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    main {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: #FFFFFF;
+        border: 1px solid #E5D2BF;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: #806B5C;
+        margin-bottom: 25px;
+    }
+
+    .quantity-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+
+    button {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+        cursor: pointer;
+        border: 1px solid #D5BDA8;
+        background-color: #B58B72;
+        color: white;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #49372E;
+    }
+
+    #quantity {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #E5D2BF;
+        border-top: 1px solid #D5BDA8;
+
+        margin-top: auto;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="../index.html">ShopSpace</a>
+    </header>
+
+    <main>
+        <h1>Quantity Stepper</h1>
+        <p>Choose the quantity of your product.</p>
+
+        <div class="quantity-box">
+            <button id="decrease">−</button>
+
+            <span id="quantity">1</span>
+
+            <button id="increase">+</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>ShopSpace - JavaScript Practice</p>
+    </footer>
+
+    <script src="quantity.js"></script>
+
+</body>
+</html>
